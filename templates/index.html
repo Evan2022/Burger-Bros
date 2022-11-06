@@ -96,32 +96,45 @@
                     {% endfor %}
                 </div>
                 <div class="form-group pt-3">
-                    <label for="name">Full Name</label>
+                    <label for="name" class="mb-1">Full Name :</label>
                     <input required class="form-control" type="text" placeholder="Your Name" name="name">
                 </div>
                 <div class="form-group pt-3">
-                    <label for="email">Email Address</label>
+                    <label for="email" class="mb-1">Email Address :</label>
                     <input required class="form-control" type="email" placeholder="example@company.com" name="email">
                 </div>
                 <div class="form-group pt-3">
-                    <label for="street ">Street Address</label>
+                    <label for="street" class="mb-1">Street Address :</label>
                     <input required class="form-control" type="text" placeholder="1234 Main Street" name="street">
                 </div>
                 <div class="form-group pt-3">
-                    <label for="city">City</label>
+                    <label for="city" class="mb-1">City :</label>
                     <input required class="form-control" type="text" placeholder="Dublin" name="city">
                 </div>
                 <div class="form-group pt-3">
-                    <label for="postcode">Eircode</label>
+                    <label for="postcode" class="mb-1">Eircode :</label>
                     <input required class="form-control" type="text" placeholder="D01 F5P2" name="postcode">
                 </div>
-                <button class="btn btn-success mt-5">Checkout&nbsp;&nbsp;<i class="bi bi-basket"></i></button>
+                <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#submitModal">Checkout&nbsp;&nbsp;<i class="bi bi-basket"></i></button>
+                <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header text-dark">
+                          <h5 class="modal-title" id="submitModalLabel">Are you sure you want to proceed?</h5>
+                          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Return to Menu</button>
+                          <button type="submit" class="btn btn-primary">Proceed</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </form>
         </div>
     </div>
-
-
 </div>
-
 
 {% endblock content %}

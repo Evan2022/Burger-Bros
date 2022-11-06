@@ -53,4 +53,4 @@ class Index(View):
             'price': price,
         }
 
-        return render(request, '../templates/order.html', context)
+        return render(request, '../templates/order.html',  context)
