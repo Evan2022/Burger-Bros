@@ -20,4 +20,5 @@ from customer.views import Index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Index.as_view(), name='index'),
+    path('accounts/', include('allauth.urls')),
 ]
