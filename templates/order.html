@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="container mb-5">
+    <div class="row justify-content-center mt-1">
+        <div class="col-md-5 col-sm-12 p-4 text-center">
+            <div class="pt-5">
+                <div class="row mb-3">
+                    <h3>ORDER SUMMARY:</h3>
+                </div>
+                {% for item in items %}
+                <p>{{ item.name }} <span class="pl-3"><span>&nbsp;€</span>{{ item.price }}</span></p>
+                {% endfor %}
+                <p class="font-weight-bold pt-4">Total: <span>&nbsp;€</span>{{ price }}</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

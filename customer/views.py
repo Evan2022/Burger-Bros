@@ -47,3 +47,10 @@ class Index(View):
 
         order = OrderModel.objects.create(price=price)
         order.items.add(*item_ids)
+
+        context = {
+            'items': order_items['items'],
+            'price': price,
+        }
+
+        return render(request, '../templates/order.html', context)
