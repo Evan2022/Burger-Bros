@@ -22,6 +22,11 @@ class OrderModel(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     items = models.ManyToManyField('MenuItem', related_name='order', blank=True)
+    name = models.CharField(max_length=50, blank=False, null=True)
+    email = models.CharField(max_length=50, blank=False, null=True)
+    street = models.CharField(max_length=200, blank=False, null=True)
+    city = models.CharField(max_length=50, blank=False, null=True)
+    postcode = models.CharField(max_length=50, blank=False, null=True)
 
     # display time the order was placed
     def __str__(self):
