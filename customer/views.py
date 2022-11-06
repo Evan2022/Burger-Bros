@@ -26,7 +26,6 @@ class Index(View):
             'items': []
         }
 
-        # create a variable items and assign it the list items from the order_items dictionary
         items = request.POST.getlist('items[]')
 
         for item in items:
@@ -36,5 +35,15 @@ class Index(View):
                 'name': menu_item.name,
                 'price': menu_item.price
             }
-            # at the end we add the item_data we have gotten from the menuitem model and add this to the items list
+
             order_items['items'].append(item_data)
+
+        price = 0
+        item_ids = []
+
+        for item in order_items['items']:
+            price += item['price']
+            item_ids.append(item['id'])
+
+        order = OrderModel.objects.create(price=price)
+        order.items.add(*item_ids)
