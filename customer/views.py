@@ -3,10 +3,12 @@ from django.views import View, generic
 from .models import MenuItem, Category, OrderModel
 from django.core.mail import send_mail
 
+# https://www.youtube.com/watch?v=TXv2lbbhsOc&list=LL&index=5&t=1472s tutorial was followed for this project.
+
+
 
 class Index(View):
     def get(self, request, *args, **kwargs):
-        # get every item from each category
         burgers = MenuItem.objects.filter(category__name__contains='BURGERS')
         desserts = MenuItem.objects.filter(category__name__contains='DESSERT')
         drinks = MenuItem.objects.filter(category__name__contains='DRINKS')

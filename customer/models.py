@@ -1,5 +1,6 @@
 from django.db import models
 
+# https://www.youtube.com/watch?v=TXv2lbbhsOc&list=LL&index=5&t=1472s tutorial was followed for this project.
 
 class MenuItem(models.Model):
     name = models.CharField(max_length=100)
@@ -28,7 +29,6 @@ class OrderModel(models.Model):
     city = models.CharField(max_length=50, blank=False, null=True)
     postcode = models.CharField(max_length=50, blank=False, null=True)
 
-    # display time the order was placed
     def __str__(self):
         return f'Order: {self.created_on.strftime("%b %d %I: %M %p")}'
 
